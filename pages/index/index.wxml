@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="header">
+    <input class="new-todo" value="{{ input }}" placeholder="请输入小区名称..." auto-focus bindinput="inputChangeHandle" bindchange="addTodoHandle"/>
+    <image class="plus" src="/images/plus.png"/>
+  </view>
+
+  <view class="district-list">
+    <text class="district-header">区域</text>
+    <text class="district">浦东</text>
+    <text class="district">徐汇</text>
+    <text class="district">杨浦</text>
+    <text class="district">黄浦</text>
+  </view>
+  
+  <block wx:if="{{ houseList.length}}">
+    <view class="house-list" wx:for="{{ houseList }}" wx:key="{{ index }}" data-index="{{ index }}">
+      <view class="house-item">
+        <image class="house-img" src="/images/home.png"></image>
+        <view class="detail-item">
+          <text class="title">{{ item.title }} </text>
+          <view class="detail-item-2">
+            <text class="floor">{{ item.floor }}</text>
+            <text class="before-price">最新挂牌均价</text>
+            <text class="price">{{ item.price }}</text> 
+            <text class="unit">万</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">抱歉...</text>
+      <text class="content">本小区目前没有房源在出售呢...</text>
+    </view>
+  </block>
+
+
+</view>
