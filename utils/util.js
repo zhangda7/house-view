@@ -19,3 +19,30 @@ function formatNumber(n) {
 module.exports = {
   formatTime: formatTime
 }
+
+function getData(url) {
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      url: url,
+      data: {},
+      header: {
+        //'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log("success")
+        resolve(res)
+      },
+      fail: function (res) {
+        reject(res)
+        console.log("failed")
+      }
+    })
+  })
+}
+
+function test(){
+  console.log("test")
+}
+
+module.exports.getData = getData;
+module.exports.test = test;

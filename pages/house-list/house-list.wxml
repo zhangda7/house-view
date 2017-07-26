@@ -1,2 +1,28 @@
-<!--house-list.wxml-->
-<text>house-list.wxml</text>
+<view class="container">
+
+  
+  <block wx:if="{{ houseList.length}}">
+    <view class="house-list" wx:for="{{ houseList }}" wx:key="{{ index }}" data-index="{{ index }}">
+      <view class="house-item">
+        <image class="house-img" src="/images/home.png"></image>
+        <view class="detail-item">
+          <text class="title">{{ item.title }} </text>
+          <view class="detail-item-2">
+            <text class="floor">{{ item.floor }}</text>
+            <text class="before-price">最新挂牌均价</text>
+            <text class="price">{{ item.price }}</text> 
+            <text class="unit">万</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">抱歉...</text>
+      <text class="content">本小区目前没有房源在出售呢...</text>
+    </view>
+  </block>
+
+
+</view>

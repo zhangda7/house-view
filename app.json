@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/house-list/house-list",
     "pages/index/index",
     "pages/rank/rank",
-    "pages/house-list/house-list",
     "pages/house-detail/house-detail"
   ],
   "window": {
