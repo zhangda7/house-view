@@ -29,8 +29,8 @@ Page({
       this.setData({ logs: logs })
     }
     var houseList = []
-    houseList.push({title:"中邦城市", price:121, floor: "高层"})
-    houseList.push({title:"黄山二村", price:122, floor: "低层"})
+    houseList.push({title:"梅园新村", price:121, floor: "高层"})
+    houseList.push({title:"浦发绿城", price:122, floor: "低层"})
     this.setData({houseList : houseList})
 
   },

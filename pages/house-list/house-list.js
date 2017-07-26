@@ -28,8 +28,8 @@ Page({
       }
       //page.setData({houseList: houseList})
     })
-    houseList.push({ title: "中邦一房", price: 121, floor: "高层" })
-    houseList.push({ title: "中邦二房", price: 122, floor: "低层" })
+    houseList.push({ title: "浦发绿城", price: 121, floor: "高层" })
+    houseList.push({ title: "浦发绿城", price: 122, floor: "低层" })
     this.setData({ houseList: houseList })
   },
 
