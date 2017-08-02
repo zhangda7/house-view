@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/estate-list/estate-list",
     "pages/house-list/house-list",
     "pages/index/index",
     "pages/rank/rank",
