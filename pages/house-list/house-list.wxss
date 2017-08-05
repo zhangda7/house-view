@@ -1,6 +1,8 @@
 .container {
   padding: 20rpx;
   border-top: 1rpx solid #e5e5e5;
+  /* background-color: #00050A; */
+  backface-visibility: 10%;
 }
 
 .header {
@@ -98,6 +100,16 @@
   margin-top: 20rpx;
 }
 
+.house--list-row {
+  margin-top: 20rpx;
+}
+
+.house-img {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 10rpx;
+}
+
 .house-item {
   display: flex;
   flex-direction: row;
@@ -107,18 +119,38 @@
   
 }
 
-.house-img {
-  width: 41rpx;
-  height: 41rpx;
-  margin-right: 10rpx;
+.detail-one-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex:1;
 }
 
-.detail-item {
+.square-detail-item-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex:1;
+  border: 1rpx solid #e0e0e0;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  background-color: #0DAEFF;
+  margin-left: 30rpx;
+  margin-right: 15rpx;
+}
+
+.square-detail-item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  border: 1rpx solid #e0e0e0;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  background-color: #0DAEFF;
+  margin-right: 30rpx;
+  margin-left: 15rpx;
 }
 
 .detail-item-2 {
@@ -126,27 +158,65 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-top: 40rpx;
 }
 
-.floor {
+.address {
   margin-right: 50rpx;
+  font-size: 30rpx;
 }
 
-.before-price {
-  margin-right: 10rpx;
+.house-name {
+  color: #4A4A4A;
+  font-size:30rpx;
+  margin-left:30rpx;
+}
+
+.house-area {
+  color: #5E5E5E;
+  font-size:25rpx;
+  margin-left:30rpx;
+}
+
+.house-houseType {
+  color: #5E5E5E;
+  font-size:25rpx;
+  margin-left:30rpx;
+}
+
+.basic-item {
+  display: flex;
+  flex-direction: column;
+  flex:11;
+}
+
+.detail-house-attr {
+  display: flex;
+  flex-direction: row;
+  flex:11;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right:40rpx;
+  flex:1;
 }
 
 .price {
-  color: #FF0000;
+  color: #333333;
   align: right;
-  font-size:60rpx;
+  font-size:40rpx;
 }
+
 .unit {
-  color: #FF0000;
+  color: #333333;
   margin-left:2rpx;
   margin-right:10rpx;
   align: right;
-  font-size:50rpx;
+  font-size:37rpx;
 }
 
 
@@ -164,6 +234,21 @@
 }
 
 .district {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #394042;
+}
+
+.label-district-checked {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #FFFFFF;
+  border: 1;
+  border-radius: 10rpx;
+  background-color: #79C662;
+}
+
+.label-district-unchecked {
   font-size: 30rpx;
   margin-left: 20rpx;
   color: #394042;

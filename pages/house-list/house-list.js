@@ -8,35 +8,49 @@ Page({
    */
   data: {
     input: '',
-    todos: [],
-    leftCount: 0,
     allCompleted: false,
+    queryEstate: "",
     logs: []
   },
 
-  load: function() {
+  fetchHouse: function(url) {
     var page = this;
     var houseList = []
-    util.getData("http://localhost:8080/house/trend")
-    .then(function(res) {
-      console.log("Status:" + res.statusCode);
-      console.log("Get trend :" + res.data);
-      for(var index in res.data) {
-        var house = res.data[index];
-        console.log(house["title"]);
-        houseList.push({ title: house["title"], price: 121, floor: "高层"})
-      }
-      //page.setData({houseList: houseList})
-    })
-    houseList.push({ title: "浦发绿城", price: 121, floor: "高层" })
-    houseList.push({ title: "浦发绿城", price: 122, floor: "低层" })
-    this.setData({ houseList: houseList })
+    util.getData(url)
+      .then(function (res) {
+        console.log("Status:" + res.statusCode);
+        console.log("Get Estate :" + res.data.data);
+        var tmpList = JSON.parse(res.data.data)
+        for (var index in tmpList) {
+          var house = tmpList[index];
+          console.log(house)
+          var title = house["title"]
+          if (title.length > 12) {
+            title = title.substring(0, 12) + "...";
+          }
+          houseList.push({ title: title, houseType: house["houseType"], area: house["area"],  price: house["price"] })
+        }
+        page.setData({ houseList: houseList })
+      })
+  },
+
+  load: function() {
+    var url = "http://localhost:8080/rest/v1/house?estateName=" + this.data.estateName + "&page=1&pageCount=20";
+    this.fetchHouse(url);
+    // var houseList = []
+    // houseList.push({ title: "浦发绿城", price: 121, address: "高层" })
+    // houseList.push({ title: "浦发绿城", price: 122, address: "低层" })
+    // this.setData({ houseList: houseList })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("option:" +options.estateName);
+    //for debug
+    this.setData({estateName : options.estateName})
+    // this.setData({ estateName: "金地未未来" });
     this.load();
   },
 
@@ -88,4 +102,5 @@ Page({
   onShareAppMessage: function () {
   
   }
+
 })

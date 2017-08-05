@@ -1,20 +1,24 @@
 <view class="container">
+  <view class="header">
+    {{ estateName }}
+  </view>
 
   
   <block wx:if="{{ houseList.length}}">
     <view class="house-list" wx:for="{{ houseList }}" wx:key="{{ index }}" data-index="{{ index }}">
-      <view class="house-item">
-        <image class="house-img" src="/images/home.png"></image>
-        <view class="detail-item">
-          <text class="title">{{ item.title }} </text>
-          <view class="detail-item-2">
-            <text class="floor">{{ item.floor }}</text>
-            <text class="before-price">最新挂牌均价</text>
+      <view class="house-item" bindtap="queryHouse" data-estatename="{{ item.name }}" >
+          <view class="basic-item">
+            <text class="house-name">{{ item.title }} </text>
+            <view class="detail-house-attr">
+              <text class="house-area">{{ item.area }} </text>
+              <text class="house-houseType">{{ item.houseType }} </text>
+            </view>
+          </view>
+          <view class="price-item">
             <text class="price">{{ item.price }}</text> 
             <text class="unit">万</text>
           </view>
         </view>
-      </view>
     </view>
   </block>
   <block wx:else>

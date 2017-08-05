@@ -1,1 +1,170 @@
-/* rank.wxss */
+.container {
+  padding: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.header .plus {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.header .new-todo {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.todos {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.todos .item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.todos .item:last-child {
+  border-bottom: 0;
+}
+
+.todos .item .name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+}
+
+.todos .item.completed .name {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todos .item .checkbox {
+  margin-right: 10rpx;
+}
+
+.todos .item .remove {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #777;
+}
+
+.footer .btn {
+  cursor: pointer;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty .title {
+  font-size: 60rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: #444;
+}
+
+.empty .content {
+  color: #666;
+  text-align: center;
+}
+
+.house-list {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin-top: 20rpx;
+}
+
+.house-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 120rpx;
+  
+}
+
+.house-img {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 10rpx;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+}
+
+.detail-item-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.floor {
+  margin-right: 50rpx;
+}
+
+.before-price {
+  margin-right: 10rpx;
+}
+
+.price {
+  color: #FF0000;
+  align: right;
+  font-size:60rpx;
+}
+.unit {
+  color: #FF0000;
+  margin-left:2rpx;
+  margin-right:10rpx;
+  align: right;
+  font-size:50rpx;
+}
+
+
+.district-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.district-header {
+  font-size:30rpx;
+  margin-left:20rpx;
+  color: #394042;
+  font-weight: 600;
+}
+
+.district {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #394042;
+}
