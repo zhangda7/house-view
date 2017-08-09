@@ -1,2 +1,5 @@
 <!--house-detail.wxml-->
 <text>house-detail.wxml</text>
+<view class="container">
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view>
