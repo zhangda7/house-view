@@ -23,12 +23,26 @@ Page({
         var tmpList = JSON.parse(res.data.data)
         for (var index in tmpList) {
           var house = tmpList[index];
-          console.log(house)
+          // console.log(house)
           var title = house["title"]
           if (title.length > 12) {
             title = title.substring(0, 12) + "...";
           }
-          houseList.push({ title: title, houseType: house["houseType"], area: house["area"],  price: house["price"] })
+          var houseId = house["link"];
+          if(houseId != null) {
+            var slashIndex = houseId.lastIndexOf("/");
+            var endIndex = houseId.indexOf(".html");
+            if(slashIndex == -1 || endIndex == -1) {
+              console.log("houseId error" +houseId)
+            }
+            houseId = houseId.substring(slashIndex + 1, endIndex);
+          }
+          
+          houseList.push({ title: title, 
+            houseType: house["houseType"], 
+            area: house["area"],  
+            price: house["price"],
+            houseId:houseId })
         }
         page.setData({ houseList: houseList })
       })
@@ -101,6 +115,13 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  queryHouse: function(event) {
+    console.log("Query House " + event.currentTarget.dataset.houseid);
+    wx.navigateTo({
+      url: '../house-detail/house-detail?houseid=' + event.currentTarget.dataset.houseid,
+    })
   }
 
 })

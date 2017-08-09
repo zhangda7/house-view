@@ -1,4 +1,6 @@
 // house-detail.js
+var util = require("../../utils/util.js")
+
 Page({
 
   /**
@@ -8,11 +10,31 @@ Page({
   
   },
 
+  fetchTrend: function(url) {
+    var page = this;
+    var houseList = []
+    console.log("Request trend url " + url)
+    util.getData(url)
+      .then(function (res) {
+        console.log("Status:" + res.statusCode);
+        console.log("Get Trend :" + res.data.data);
+      });  
+  },
+
+  load: function() {
+    var url = "http://localhost:8080/rest/v1/house/trend?houseId=" + this.data.houseid;
+    this.fetchTrend(url);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log("option:" +options.houseid);
+    //for debug
+    this.setData({houseid : options.houseid})
+    // this.setData({ estateName: "金地未未来" });
+    this.load();
   },
 
   /**

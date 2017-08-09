@@ -6,7 +6,7 @@
   
   <block wx:if="{{ houseList.length}}">
     <view class="house-list" wx:for="{{ houseList }}" wx:key="{{ index }}" data-index="{{ index }}">
-      <view class="house-item" bindtap="queryHouse" data-estatename="{{ item.name }}" >
+      <view class="house-item" bindtap="queryHouse" data-houseid="{{ item.houseId }}" >
           <view class="basic-item">
             <text class="house-name">{{ item.title }} </text>
             <view class="detail-house-attr">

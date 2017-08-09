@@ -29,7 +29,12 @@ Page({
           if (addr.length > 20) {
             addr = addr.substring(0, 20) + "...";
           }
-          houseList.push({ name: estate["name"], address: addr, price: 100 })
+          var price = estate["price"] / 10000;
+          var priceStr = "未知";
+          if(price != 0) {
+            priceStr = price.toFixed(2);
+          }
+          houseList.push({ name: estate["name"], address: addr, price: priceStr })
         }
         page.setData({ houseList: houseList })
       })
