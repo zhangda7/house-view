@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/estate-list/estate-list",
+    "pages/house-detail/house-detail",
     "pages/house-list/house-list",
     "pages/rank/rank",
-    "pages/index/index",
-    "pages/house-detail/house-detail"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

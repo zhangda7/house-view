@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chartData:[]
+    chartData:[],
+    curHouse:{}
   },
 
   touchHandler: function (e) {
@@ -47,7 +48,18 @@ Page({
         var house = JSON.parse(res.data.data);
         house = house[0];
         var title = house["title"];
+        var price = house["price"];
+        var area = house["area"];
+        var houseType = house["houseType"];
+        var avg = (price * 10000 / area).toFixed(1);
+        var floor = house["floor"]
+        var estateName = house["estateName"];
+        var district = house["district"];
+        var address = house["address"];
+        var year = house["year"];
         var trendList = house["trendList"];
+        var downPayment = (price * 0.3).toFixed(1);
+        var loan = (price - downPayment).toFixed(1);
         console.log("trends:" + trendList);
         var trendsPrice = []
         var trendsDate = []
@@ -55,14 +67,14 @@ Page({
             var trend = trendList[index];
             console.log("Trend : " + trend);
             trendsPrice.push(trend.price);
-            trendsDate.push(trend.date);
+            trendsDate.push(trend.dateStr);
         }
         // page.setData({chartData : trends});
         var series = [{
             name: '挂牌价',
             data: trendsPrice,
             format: function (val, name) {
-                return val.toFixed(2) + '万';
+                return val.toFixed(1) + '万';
             }
         }];
         console.log("chart 2 : " + lineChart);
@@ -72,11 +84,17 @@ Page({
             categories: trendsDate,
             series: series
         });
+        page.setData({title:title, price:price, 
+            area:area, houseType:houseType, 
+            avg:avg, floor:floor,
+            estateName:estateName, district:district,
+            address:address, year:year,
+            downPayment:downPayment, loan:loan})
       });  
   },
 
   load: function() {
-    var url = "http://localhost:8080/rest/v1/house/trend?houseId=" + this.data.houseid;
+    var url = "http://localhost:8080/rest/v1/house/trendDetail?houseId=" + this.data.houseid;
     this.fetchTrend(url);
   },
 
@@ -174,11 +192,11 @@ Page({
                 title: '价格 (万元)',
                 format: function (val) {
                     return val.toFixed(2);
-                },
-                min: 0
+                }
+                // min: 0
             },
             width: windowWidth,
-            height: 200,
+            height: 150,
             dataLabel: false,
             dataPointShape: true,
             extra: {

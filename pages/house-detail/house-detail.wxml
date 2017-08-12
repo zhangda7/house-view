@@ -1,5 +1,95 @@
 <!--house-detail.wxml-->
-<text>house-detail.wxml</text>
 <view class="container">
-    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  <view class="header">
+    {{ estateName }}
+  </view>
+  <view class="container">
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+   
+  <view class="detail-info">
+    <view class="header">
+      {{ title }}
+    </view>
+    <view class="red-section">
+      <view class="price-section">
+        <view class="price-header">
+          售价
+        </view>
+        <view class="price">
+          {{price}}万
+        </view>
+      </view>
+
+      <view class="price-section">
+        <view class="price-header">
+          面积
+        </view>
+        <view class="price">
+          {{area}}平
+        </view>
+      </view>
+
+      <view class="price-section">
+        <view class="price-header">
+          户型
+        </view>
+        <view class="price">
+          {{houseType}}
+        </view>
+      </view>
+    </view>
+
+    <view class="small-info-section">
+      <view class="small-row">
+        <view class="small-coloum-key">
+          单价：
+        </view>
+        <view class="small-coloum-value">
+          {{avg}}元/平
+        </view>
+
+        <view class="small-coloum-key-right">
+          楼层：
+        </view>
+        <view class="small-coloum-value-right">
+          {{floor}}
+        </view>
+      </view>
+
+      <view class="small-row">
+        <view class="small-coloum-key">
+          年代：
+        </view>
+        <view class="small-coloum-value">
+          {{year}}
+        </view>
+
+        <view class="small-coloum-key-right">
+          区域：
+        </view>
+        <view class="small-coloum-value-right">
+          {{district}}
+        </view>
+      </view>
+
+      <view class="small-row">
+       
+        <view class="small-coloum-key">
+          首付：
+        </view>
+        <view class="small-coloum-value">
+          {{145}}万
+        </view>
+        <view class="small-coloum-key-right">
+          贷款：
+        </view>
+        <view class="small-coloum-value-right">
+          {{loan}}万
+        </view>
+      </view>
+    </view>
+  </view>
+
+
 </view>
