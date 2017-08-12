@@ -149,44 +149,7 @@ Page({
     var url = "http://localhost:8080/rest/v1/estate/listByDistrict?district=" + event.currentTarget.dataset.district + "&page=1&pageCount=10";
     console.log("Change district url :" + url);
     this.fetchEstate(url);
-    //TODO 更新选中项的样式
     var selectedIndex = this.districtMap.get(event.currentTarget.dataset.district);
-    /*switch(event.currentTarget.dataset.district) {
-      case "浦东":
-        selectedIndex = 0;
-        break;
-      case "闵行":
-        selectedIndex = 1;
-        break;
-      case "宝山":
-        selectedIndex = 2;
-        break;
-      case "徐汇":
-        selectedIndex = 3;
-        break;
-      case "普陀":
-        selectedIndex = 4;
-        break;
-        case "杨浦":
-        selectedIndex = 4;
-        break;
-        case "长宁":
-        selectedIndex = 4;
-        break;
-        case "松江":
-        selectedIndex = 4;
-        break;
-        case "嘉定":
-        selectedIndex = 4;
-        break;
-        case "静安":
-        selectedIndex = 4;
-        break;
-        case "黄浦":
-        selectedIndex = 4;
-        break;
-
-    }*/
     this.setData({clickedDistrictIndex:selectedIndex});
   },
 
