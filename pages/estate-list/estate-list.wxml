@@ -6,20 +6,19 @@
 
   <view class="district-list">
     <label class="district-header">区域</label>
-    <label class="label-district-checked" data-district="浦东" bindtap="queryDistrict">浦东</label>
-    <label class="label-district-unchecked" data-district="闵行" bindtap="queryDistrict">闵行</label>
-    <label class="label-district-unchecked" data-district="宝山" bindtap="queryDistrict">宝山</label>
-    <label class="label-district-unchecked" data-district="徐汇" bindtap="queryDistrict">徐汇</label>
-    <label class="label-district-unchecked" data-district="普陀" bindtap="queryDistrict">普陀</label>
-    <label class="label-district-unchecked" data-district="杨浦" bindtap="queryDistrict">杨浦</label>
-    <label class="label-district-unchecked" data-district="长宁" bindtap="queryDistrict">长宁</label>
-    <label class="label-district-unchecked" data-district="松江" bindtap="queryDistrict">松江</label>
-    <label class="label-district-unchecked" data-district="嘉定" bindtap="queryDistrict">嘉定</label>
-    <label class="label-district-unchecked" data-district="静安" bindtap="queryDistrict">静安</label>
-    <label class="label-district-unchecked" data-district="黄浦" bindtap="queryDistrict">黄浦</label>
-    <label class="label-district-unchecked" data-district="闸北" bindtap="queryDistrict">闸北</label>
-    <label class="label-district-unchecked" data-district="虹口" bindtap="queryDistrict">虹口</label>
-    <label class="label-district-unchecked" data-district="青浦" bindtap="queryDistrict">青浦</label>
+    <label class="{{clickedDistrictIndex == 0?'label-district-checked':'label-district-unchecked'}}" data-district="浦东" bindtap="queryDistrict">浦东</label>
+    <label class="{{clickedDistrictIndex == 1?'label-district-checked':'label-district-unchecked'}}" data-district="闵行" bindtap="queryDistrict">闵行</label>
+    <label class="{{clickedDistrictIndex == 2?'label-district-checked':'label-district-unchecked'}}" data-district="宝山" bindtap="queryDistrict">宝山</label>
+    <label class="{{clickedDistrictIndex == 3?'label-district-checked':'label-district-unchecked'}}" data-district="徐汇" bindtap="queryDistrict">徐汇</label>
+    <label class="{{clickedDistrictIndex == 4?'label-district-checked':'label-district-unchecked'}}" data-district="普陀" bindtap="queryDistrict">普陀</label>
+    <label class="{{clickedDistrictIndex == 5?'label-district-checked':'label-district-unchecked'}}" data-district="杨浦" bindtap="queryDistrict">杨浦</label>
+    <label class="{{clickedDistrictIndex == 6?'label-district-checked':'label-district-unchecked'}}" data-district="长宁" bindtap="queryDistrict">长宁</label>
+    <label class="{{clickedDistrictIndex == 7?'label-district-checked':'label-district-unchecked'}}" data-district="松江" bindtap="queryDistrict">松江</label>
+    <label class="{{clickedDistrictIndex == 8?'label-district-checked':'label-district-unchecked'}}" data-district="嘉定" bindtap="queryDistrict">嘉定</label>
+    <label class="{{clickedDistrictIndex == 10?'label-district-checked':'label-district-unchecked'}}" data-district="黄浦" bindtap="queryDistrict">黄浦</label>
+    <label class="{{clickedDistrictIndex == 11?'label-district-checked':'label-district-unchecked'}}" data-district="闸北" bindtap="queryDistrict">闸北</label>
+    <label class="{{clickedDistrictIndex == 12?'label-district-checked':'label-district-unchecked'}}" data-district="虹口" bindtap="queryDistrict">虹口</label>
+    <label class="{{clickedDistrictIndex == 13?'label-district-checked':'label-district-unchecked'}}" data-district="青浦" bindtap="queryDistrict">青浦</label>
     
   </view>
   

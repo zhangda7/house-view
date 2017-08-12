@@ -11,7 +11,8 @@ Page({
     todos: [],
     leftCount: 0,
     allCompleted: false,
-    logs: []
+    districtMap:null,
+    clickedDistrictIndex:0
   },
 
   fetchEstate: function(url) {
@@ -53,6 +54,21 @@ Page({
    */
   onLoad: function (options) {
     this.load();
+    this.districtMap = new Map();
+    this.districtMap.set("浦东", 0);
+    this.districtMap.set("闵行", 1);
+    this.districtMap.set("宝山", 2);
+    this.districtMap.set("徐汇", 3);
+    this.districtMap.set("普陀", 4);
+    this.districtMap.set("杨浦", 5);
+    this.districtMap.set("长宁", 6);
+    this.districtMap.set("松江", 7);
+    this.districtMap.set("嘉定", 8);
+    // this.districtMap.set("静安", 9);
+    this.districtMap.set("黄浦", 10);
+    this.districtMap.set("闸北", 11);
+    this.districtMap.set("虹口", 12);
+    this.districtMap.set("青浦", 13);
   },
 
   /**
@@ -134,6 +150,44 @@ Page({
     console.log("Change district url :" + url);
     this.fetchEstate(url);
     //TODO 更新选中项的样式
+    var selectedIndex = this.districtMap.get(event.currentTarget.dataset.district);
+    /*switch(event.currentTarget.dataset.district) {
+      case "浦东":
+        selectedIndex = 0;
+        break;
+      case "闵行":
+        selectedIndex = 1;
+        break;
+      case "宝山":
+        selectedIndex = 2;
+        break;
+      case "徐汇":
+        selectedIndex = 3;
+        break;
+      case "普陀":
+        selectedIndex = 4;
+        break;
+        case "杨浦":
+        selectedIndex = 4;
+        break;
+        case "长宁":
+        selectedIndex = 4;
+        break;
+        case "松江":
+        selectedIndex = 4;
+        break;
+        case "嘉定":
+        selectedIndex = 4;
+        break;
+        case "静安":
+        selectedIndex = 4;
+        break;
+        case "黄浦":
+        selectedIndex = 4;
+        break;
+
+    }*/
+    this.setData({clickedDistrictIndex:selectedIndex});
   },
 
   queryHouse: function(event) {
